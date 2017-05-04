@@ -1,0 +1,179 @@
+int vector_leds [10]={0,1,2,3,4,5,6,7,8,9};
+int i=5;
+int j=9;
+int k=0;
+int l=0;
+int m=0;
+int n=0;
+
+void setup() {
+  // put your setup code here, to run once:
+
+ 
+pinMode(0,OUTPUT);
+pinMode(1,OUTPUT);
+pinMode(2,OUTPUT);
+pinMode(3,OUTPUT);
+pinMode(4,OUTPUT);
+pinMode(5,OUTPUT);      // declaramos los pines como salida 
+pinMode(6,OUTPUT);
+pinMode(7,OUTPUT);
+pinMode(8,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(10,OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+luces1();
+delay(250);
+luces2();
+delay(250);         // Llamamos al void 
+luces3 ();
+delay(250);
+luces4();
+delay(250);
+luces5();
+delay(250);
+}
+
+
+void luces1 (){
+for (;i<10;i++){
+  digitalWrite(vector_leds[i],HIGH);  
+  delay(80);
+}
+for (;i>=5;i--){
+   digitalWrite(vector_leds[i],LOW);        // prendemos los leds desde el de la mitad
+  delay(100);
+}
+for (;i>=0;i --){
+  digitalWrite(vector_leds[i],HIGH);
+  delay(80);
+}
+for (;i<=5;i ++){
+   digitalWrite(vector_leds[i],LOW);
+  delay(100);
+}
+i=5;
+}
+
+
+void luces2(){
+  
+  for (;m<10;m=m+2){
+    digitalWrite(vector_leds[m],HIGH);
+    delay(100);
+    digitalWrite(vector_leds[m],LOW);
+    delay(100);
+    }                                       // prenden pasando un led y luego se prenden todos 
+  for(;m<5;m++){
+    digitalWrite(vector_leds[m],HIGH);
+    delay(120);
+    digitalWrite(vector_leds[m],LOW);
+    delay(120);
+    }
+    for(;m>0;m--){
+    digitalWrite(vector_leds[m],HIGH);
+    delay(120);
+    digitalWrite(vector_leds[m],LOW);
+    delay(120);
+    }
+  m=0;
+  }
+
+void luces3 (){
+for (;j>=5;j --){
+    digitalWrite(vector_leds[j],HIGH);
+  delay(80);
+  digitalWrite(vector_leds[j],LOW);
+  delay(80);
+ }
+ for (;k<5;k ++){
+  
+    digitalWrite(vector_leds[k],HIGH);          // prenden desde el ultimo y por partes en la mitad
+  delay(80);
+  digitalWrite(vector_leds[k],LOW);
+  delay(80);
+  }
+for (;j<=9;j ++){
+    digitalWrite(vector_leds[j],LOW);
+  delay(80);
+  digitalWrite(vector_leds[j],HIGH);
+  delay(80);
+ }  
+ for (;k>0;k --){
+  
+    digitalWrite(vector_leds[k],LOW);
+  delay(80);
+  digitalWrite(vector_leds[k],HIGH);
+  delay(80);
+  }
+j=10;
+k=0;
+}
+
+void luces4(){
+  digitalWrite(0,HIGH);
+  digitalWrite(1,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(9,HIGH);            // PRENDE TODOS LOS LEDS Y LUEGO LOS APAGA DE FORMA ORDENADA
+  for(;n<0;n--){
+    digitalWrite(vector_leds[n],LOW);
+    
+    }
+  }
+
+void luces5 (){
+  for (;l<2;l ++){
+  digitalWrite(vector_leds[l],HIGH);
+  delay(80);
+}
+  for (;l>=0;l --){
+   digitalWrite(vector_leds[l],LOW);          // prende y apaga desde la mitad hacia el inicio y el final
+  delay(80);
+  }
+  for (;l<4;l ++){
+  digitalWrite(vector_leds[l],HIGH);
+  delay(100);
+  }
+  for (;l>=0; l--){
+   digitalWrite(vector_leds[l],LOW);
+  delay(100);
+  }
+   for (;l<6;l ++){
+  digitalWrite(vector_leds[l],HIGH);
+  delay(200);
+   }
+   for (;l>=0;l --){
+   digitalWrite(vector_leds[l],LOW);
+  delay(200);
+  }
+  for (;l<8;l ++){
+  digitalWrite(vector_leds[l],HIGH);
+  delay(300);
+   }
+  for (;l>=0;l --){
+   digitalWrite(vector_leds[l],LOW);
+  delay(300);
+  }
+  for (;l<10;l ++){
+  digitalWrite(vector_leds[l],HIGH);
+  delay(400);
+  }
+  for (;l>=0;l --){
+   digitalWrite(vector_leds[l],LOW);
+  delay(400);
+  }
+
+  
+ l=0;
+}
+    
